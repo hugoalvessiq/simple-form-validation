@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(120deg, #a18cd1, #fbc2eb);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2.5rem;
+  width: 380px;
+  max-width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+  color: rgb(9, 9, 70);
+}
+
+.form-control {
+  position: relative;
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: rgb(57, 68, 78);
+}
+
+input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+  margin-bottom: 1rem;
+}
+
+input:focus {
+  border-color: #a18cd1;
+}
+
+.icon {
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  visibility: hidden;
+}
+
+.icon.success {
+  color: #2ecc71;
+  right: 31px;
+}
+
+.icon.error {
+  color: #e74c3c;
+  right: 31px;
+}
+
+.success-password,
+.error-password {
+  top: 6px;
+}
+
+.icon.error.error-email,
+.success-email.icon.success {
+  right: 7px;
+}
+
+.fa-solid,
+.fas {
+  font-weight: 900;
+  margin: 7px;
+}
+
+small {
+  color: #e74c3c;
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  visibility: hidden;
+  top: 75px;
+}
+
+.form-control.error input {
+  border-color: #e74c3c;
+  animation: shake 0.3s;
+}
+
+.form-control.success input {
+  border-color: #2ecc71;
+}
+
+.form-control.success .icon.success {
+  visibility: visible;
+}
+
+.form-control.error .icon.error {
+  visibility: visible;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper button {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+}
+
+.btn {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.8rem;
+  background: #a18cd1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #8e7cc3;
+}
+
+.success-message {
+  display: none;
+  text-align: center;
+  color: #2ecc71;
+  font-weight: 600;
+  margin-top: 1rem;
+  animation: fadeUp 0.5s ease;
+}
+
+.error-message {
+  display: none;
+  text-align: center;
+  color: lightcoral;
+  font-weight: 600;
+  margin-top: 1rem;
+  animation: fadeUp 0.5s ease;
+}
+
+/* ====== Animations ====== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
